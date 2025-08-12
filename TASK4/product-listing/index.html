@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Product Catalog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1><i class="fas fa-laptop"></i> TechStore</h1>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search products...">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cartCount">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Filters and Sorting Section -->
+            <div class="filters-section">
+                <div class="filters-row">
+                    <div class="filter-group">
+                        <label for="categoryFilter">Category:</label>
+                        <select id="categoryFilter">
+                            <option value="">All Categories</option>
+                            <option value="laptops">Laptops</option>
+                            <option value="smartphones">Smartphones</option>
+                            <option value="tablets">Tablets</option>
+                            <option value="accessories">Accessories</option>
+                            <option value="gaming">Gaming</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="priceFilter">Price Range:</label>
+                        <select id="priceFilter">
+                            <option value="">All Prices</option>
+                            <option value="0-100">Under $100</option>
+                            <option value="100-500">$100 - $500</option>
+                            <option value="500-1000">$500 - $1000</option>
+                            <option value="1000+">Over $1000</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="ratingFilter">Rating:</label>
+                        <select id="ratingFilter">
+                            <option value="">All Ratings</option>
+                            <option value="4-5">4+ Stars</option>
+                            <option value="3-5">3+ Stars</option>
+                            <option value="2-5">2+ Stars</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="brandFilter">Brand:</label>
+                        <select id="brandFilter">
+                            <option value="">All Brands</option>
+                            <option value="Apple">Apple</option>
+                            <option value="Samsung">Samsung</option>
+                            <option value="Dell">Dell</option>
+                            <option value="HP">HP</option>
+                            <option value="Lenovo">Lenovo</option>
+                            <option value="Sony">Sony</option>
+                            <option value="Microsoft">Microsoft</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="sorting-row">
+                    <div class="sort-group">
+                        <label for="sortBy">Sort by:</label>
+                        <select id="sortBy">
+                            <option value="name">Name</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Rating</option>
+                            <option value="newest">Newest</option>
+                        </select>
+                    </div>
+
+                    <div class="view-options">
+                        <button class="view-btn active" data-view="grid">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+
+                    <div class="results-info">
+                        <span id="resultsCount">0 products found</span>
+                    </div>
+                </div>
+
+                <div class="active-filters" id="activeFilters">
+                    <!-- Active filters will be displayed here -->
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-container">
+                <div id="productsGrid" class="products-grid">
+                    <!-- Products will be dynamically loaded here -->
+                </div>
+
+                <!-- Loading State -->
+                <div id="loadingState" class="loading-state">
+                    <div class="loading-spinner"></div>
+                    <p>Loading products...</p>
+                </div>
+
+                <!-- Empty State -->
+                <div id="emptyState" class="empty-state" style="display: none;">
+                    <i class="fas fa-search"></i>
+                    <h3>No products found</h3>
+                    <p>Try adjusting your filters or search terms</p>
+                    <button id="clearFiltersBtn" class="btn btn-primary">Clear All Filters</button>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination" id="pagination" style="display: none;">
+                <button class="pagination-btn" id="prevPage">
+                    <i class="fas fa-chevron-left"></i> Previous
+                </button>
+                <div class="page-numbers" id="pageNumbers">
+                    <!-- Page numbers will be generated here -->
+                </div>
+                <button class="pagination-btn" id="nextPage">
+                    Next <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Product Quick View Modal -->
+    <div id="quickViewModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Product Details</h3>
+                <button class="close-btn" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Product details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be displayed here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn btn-primary checkout-btn" id="checkoutBtn">
+                Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div id="cartOverlay" class="cart-overlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

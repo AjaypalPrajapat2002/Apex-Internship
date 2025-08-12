@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Task 3 — Advanced CSS & JavaScript</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Web Advanced — Task 3</h1>
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#intro">Home</a></li>
+          <li><a href="#quiz">Quiz</a></li>
+          <li><a href="#weather">Weather</a></li>
+          <li><a href="#carousel">Gallery</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="intro" class="hero card">
+      <h2>Advanced Web Development</h2>
+      <p>This page demonstrates advanced CSS techniques and JavaScript functionality including responsive design, interactive components, and API integration.</p>
+      <ul class="checklist">
+        <li>Responsive design with mobile-first approach</li>
+        <li>Interactive quiz with scoring system</li>
+        <li>Weather data from external API</li>
+        <li>Image carousel with navigation controls</li>
+        <li>Advanced CSS animations and transitions</li>
+      </ul>
+    </section>
+
+    <section class="grid">
+      <!-- Interactive Quiz Section -->
+      <article id="quiz" class="card quiz-section">
+        <h2>Interactive Quiz</h2>
+        <div class="quiz-container">
+          <div class="quiz-header">
+            <div class="quiz-progress">
+              <span class="current-question">1</span> of <span class="total-questions">5</span>
+            </div>
+            <div class="quiz-score">
+              Score: <span class="score-display">0</span>
+            </div>
+          </div>
+          
+          <div class="quiz-content">
+            <div class="question-container">
+              <h3 class="question-text">Loading questions...</h3>
+              <div class="options-container">
+                <!-- Options will be populated by JavaScript -->
+              </div>
+            </div>
+            
+            <div class="quiz-controls">
+              <button class="button button-secondary" id="prevBtn" disabled>Previous</button>
+              <button class="button" id="nextBtn">Next</button>
+              <button class="button button-primary" id="submitBtn" style="display: none;">Submit Quiz</button>
+            </div>
+          </div>
+          
+          <div class="quiz-results" style="display: none;">
+            <h3>Quiz Results</h3>
+            <div class="results-summary">
+              <p>Your score: <span class="final-score">0</span> out of <span class="total-score">5</span></p>
+              <p class="performance-message">Great job!</p>
+            </div>
+            <button class="button" id="restartQuiz">Take Quiz Again</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Weather API Section -->
+      <article id="weather" class="card weather-section">
+        <h2>Weather Information</h2>
+        <div class="weather-container">
+          <div class="weather-search">
+            <input 
+              type="text" 
+              id="cityInput" 
+              placeholder="Enter city name (e.g., London, New York)"
+              class="weather-input"
+            />
+            <button class="button" id="searchWeather">Get Weather</button>
+          </div>
+          
+          <div class="weather-display" style="display: none;">
+            <div class="weather-header">
+              <h3 class="city-name">City Name</h3>
+              <p class="weather-date">Date</p>
+            </div>
+            
+            <div class="weather-main">
+              <div class="weather-icon">
+                <img id="weatherIcon" src="" alt="Weather icon" />
+              </div>
+              <div class="weather-info">
+                <div class="temperature">
+                  <span id="temperature">--</span>°C
+                </div>
+                <div class="weather-description" id="weatherDescription">
+                  Weather description
+                </div>
+              </div>
+            </div>
+            
+            <div class="weather-details">
+              <div class="weather-detail">
+                <span class="detail-label">Humidity:</span>
+                <span id="humidity">--%</span>
+              </div>
+              <div class="weather-detail">
+                <span class="detail-label">Wind Speed:</span>
+                <span id="windSpeed">-- m/s</span>
+              </div>
+              <div class="weather-detail">
+                <span class="detail-label">Pressure:</span>
+                <span id="pressure">-- hPa</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="weather-error" style="display: none;">
+            <p>Unable to fetch weather data. Please check the city name and try again.</p>
+          </div>
+          
+          <div class="weather-loading" style="display: none;">
+            <div class="loading-spinner"></div>
+            <p>Loading weather data...</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Image Carousel Section -->
+      <article id="carousel" class="card carousel-section">
+        <h2>Image Gallery</h2>
+        <div class="carousel-container">
+          <div class="carousel-wrapper">
+            <div class="carousel-track">
+              <!-- Images will be populated by JavaScript -->
+            </div>
+          </div>
+          
+          <div class="carousel-controls">
+            <button class="carousel-btn prev-btn" aria-label="Previous image">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6"/>
+              </svg>
+            </button>
+            <div class="carousel-indicators">
+              <!-- Indicators will be populated by JavaScript -->
+            </div>
+            <button class="carousel-btn next-btn" aria-label="Next image">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </button>
+          </div>
+          
+          <div class="carousel-info">
+            <h3 class="image-title">Image Title</h3>
+            <p class="image-description">Image description</p>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2025 Your Name — Task 3: Advanced CSS & JavaScript</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html> 

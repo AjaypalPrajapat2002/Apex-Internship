@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web Basics Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>My First Webpage</h1>
+      <nav class="site-nav">
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="https://developer.mozilla.org/" target="_blank" rel="noreferrer">Learn More</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about" class="card">
+      <h2>About This Page</h2>
+      <p>This page demonstrates foundational HTML, CSS, and JavaScript. It includes headings, paragraphs, images, links, and a button that triggers an alert.</p>
+      <button id="alertButton" class="button">Click me</button>
+    </section>
+
+    <section id="gallery" class="card">
+      <h2>Gallery</h2>
+      <img src="https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1200&q=60" alt="Ocean waves at sunset" />
+      <p>Want to learn more? Visit the <a href="https://www.w3schools.com/html/" target="_blank" rel="noreferrer">HTML tutorial</a>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2025 Your Name</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html> 

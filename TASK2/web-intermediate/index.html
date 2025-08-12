@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Task 2 — Forms, Layouts, and DOM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Web Fundamentals — Task 2</h1>
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#intro">Home</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#todo">To‑Do</a></li>
+          <li><a href="https://developer.mozilla.org/" target="_blank" rel="noreferrer">Docs</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="intro" class="hero card">
+      <h2>Objectives</h2>
+      <p>This page demonstrates a responsive layout (Flexbox + Grid), a styled contact form with JavaScript validation, and a dynamic to‑do list using DOM manipulation and localStorage.</p>
+      <ul class="checklist">
+        <li>Responsive header navigation using Flexbox</li>
+        <li>Content areas arranged with CSS Grid + media queries</li>
+        <li>Accessible contact form with client‑side validation</li>
+        <li>Dynamic To‑Do list: add, complete, remove, persist</li>
+      </ul>
+    </section>
+
+    <section class="grid">
+      <article id="contact" class="card">
+        <h2>Contact Form</h2>
+        <form id="contactForm" novalidate>
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Jane Doe" autocomplete="name" aria-describedby="nameError" />
+            <p class="error-message" id="nameError" role="alert" aria-live="polite"></p>
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="jane@example.com" autocomplete="email" aria-describedby="emailError" />
+            <p class="error-message" id="emailError" role="alert" aria-live="polite"></p>
+          </div>
+
+          <div class="form-field">
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" type="text" placeholder="How can we help?" aria-describedby="subjectError" />
+            <p class="error-message" id="subjectError" role="alert" aria-live="polite"></p>
+          </div>
+
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message..." aria-describedby="messageError"></textarea>
+            <p class="error-message" id="messageError" role="alert" aria-live="polite"></p>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="button">Send Message</button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </article>
+
+      <aside id="todo" class="card">
+        <h2>To‑Do List</h2>
+        <div class="todo-controls">
+          <label for="todoInput" class="visually-hidden">New task</label>
+          <input id="todoInput" type="text" placeholder="Add a new task and press Enter" />
+          <button id="addTodoButton" class="button button-secondary" type="button">Add</button>
+        </div>
+        <ul id="todoList" class="todo-list" aria-live="polite"></ul>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2025 Your Name — Task 2</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html> 
