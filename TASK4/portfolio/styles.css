@@ -200,10 +200,17 @@ body {
 }
 
 .hero-image {
+    
     display: flex;
     justify-content: center;
     align-items: center;
     animation: fadeInRight 1s ease 0.8s both;
+}
+
+.hero-image img{
+    background-image: url(https://media.licdn.com/dms/image/v2/D4E03AQEkCgzrcBWZtg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1728918659214?e=1758153600&v=beta&t=w89dz30iP9MQAU10uJQxkTzLoMGIhKeBYkF1okBipkM);
+    border-radius: 230px;
+    border-image-repeat: repeat;
 }
 
 .profile-placeholder {
