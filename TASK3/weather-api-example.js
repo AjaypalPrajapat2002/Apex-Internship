@@ -4,7 +4,7 @@
 class RealWeatherAPI {
   constructor() {
     // Get your free API key from: https://openweathermap.org/api
-    this.apiKey = 'YOUR_ACTUAL_API_KEY_HERE';
+    this.apiKey = 'DEMO_API';
     this.baseUrl = 'https://api.openweathermap.org/data/2.5/weather';
   }
 
