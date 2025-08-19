@@ -1,5 +1,4 @@
 // TechStore E-commerce Application
-// Performance optimized with lazy loading, debouncing, and efficient DOM manipulation
 
 class TechStore {
     constructor() {

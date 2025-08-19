@@ -144,7 +144,7 @@ TASK5/
 ### Adding Products
 To add new products, modify the `products` array in `script.js`:
 
-```javascript
+javascript
 {
     id: 13,
     name: "Product Name",
@@ -154,18 +154,18 @@ To add new products, modify the `products` array in `script.js`:
     description: "Product description",
     image: "image_url_or_data_uri"
 }
-```
+
 
 ### Styling Customization
 Modify CSS custom properties in `styles.css`:
 
-```css
+css
 :root {
     --primary-color: #your-color;
     --font-family: 'Your Font', sans-serif;
     --spacing-4: 1.5rem;
 }
-```
+
 
 ### Adding Categories
 1. Add category option to HTML select elements

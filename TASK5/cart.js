@@ -3,7 +3,7 @@ class CartPage {
     constructor() {
         this.cart = [];
         this.shippingCost = 0;
-        this.taxRate = 0.08; // 8% tax rate
+        this.taxRate = 0.08;
         this.init();
     }
 
